@@ -7,13 +7,13 @@
 		<br/>
 		<div class="row">
 			<div class="col-md-offset-1 col-md-5">
-				<table class="table tasks">
+				<table class="table">
 					<tr>
 						<th> Status </th>
 						<th> Task </th>
 						<th> Action </th>
 					</tr>
-					<tr class="empty">
+					<tr>
 						<td colspan="3"><i> <center> Nothing to show </center> </i> </td>
 					</tr>
 				</table>
@@ -38,7 +38,5 @@
 				</div>
 			</div>
 		</div>
-		<script type="text/javascript" src="js/jquery.min.js"></script>
-		<script type="text/javascript" src="js/lunch-jquery.js"></script>
 	</body>
 </html>
