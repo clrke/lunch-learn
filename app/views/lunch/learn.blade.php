@@ -1,8 +1,8 @@
-<html>
+<html ng-app="tasksApp">
 	<head>
-		<link media="all" type="text/css" rel="stylesheet" href="css/bootstrap.css">
+		{{ HTML::style('css/bootstrap.css')}}
 	</head>
-	<body>
+	<body ng-controller="TasksCtrl">
 		<br/>
 		<br/>
 		<div class="row">
@@ -13,8 +13,13 @@
 						<th> Task </th>
 						<th> Action </th>
 					</tr>
-					<tr>
+					<tr ng-hide="tasks.length">
 						<td colspan="3"><i> <center> Nothing to show </center> </i> </td>
+					</tr>
+					<tr ng-repeat="task in tasks">
+						<td> </td>
+						<td> <% task %>  </td>
+						<td> <button ng-click="deleteTask(task)" class="btn btn-danger"> Delete </button> </td>
 					</tr>
 				</table>
 			</div>
@@ -24,10 +29,11 @@
 						<h3 class="panel-title"> New Task </h3>
 					</div>
 					<div class="panel-body">
-						<form class="form new-task">
+						<form class="form new-task" ng-submit="addTask()">
 							<div class="row">
 								<div class="col-md-9">
-									<input type="text" class="form-control">
+									<input type="text" class="form-control" ng-model="newTask">
+									<% newTask %>
 								</div>
 								<div class="col-md-3">
 									<button type="submit" class="btn btn-primary"> Add </button>
@@ -38,5 +44,9 @@
 				</div>
 			</div>
 		</div>
+		{{ HTML::script('js/underscore.min.js')}}
+		{{ HTML::script('js/angular.min.js') }}
+		{{ HTML::script('js/lunch-angular.js')}}
+
 	</body>
 </html>

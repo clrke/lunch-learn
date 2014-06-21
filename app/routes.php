@@ -11,7 +11,12 @@
 |
 */
 
-Route::get('/', function()
+Route::get('/subject', function()
+{
+	return View::make('lunch.index');
+});
+
+Route::get('/angular', function()
 {
 	return View::make('lunch.learn');
 });
